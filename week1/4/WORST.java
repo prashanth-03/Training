@@ -1,4 +1,4 @@
-public class WORST {
+public class WORST {            // will give wrong output
     static int  min_replacements(int n)
     {
             int c = 0;
@@ -11,7 +11,7 @@ public class WORST {
                 }
                 else
                 {
-                    n -= 1;
+                    n -= 1;         // when will u do n+1 
                     c++;
                 }
             }
