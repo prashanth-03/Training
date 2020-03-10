@@ -1,16 +1,16 @@
-public class BEST
+public class BEST    // code wont work and not the best approach as well
 {
     static int  min_replacements(int n)
     {
         int c=0;
         while(n!=1)
         {
-            if((n&1)==1) {
+            if((n&1)==1) {   // check conditon for odd number is wrong
                 n= n - 1;
                 c++;
             }
-            n= n>>1;
-            c++;
+            n= n>>1;        // these two statements in else, otherwise c++ will happen twice if the 'if' condition is true
+            c++;            
 
         }
         return c;
