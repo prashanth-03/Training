@@ -2,18 +2,19 @@ public class BEST    // code wont work and not the best approach as well
 {
     static int  min_replacements(int n)
     {
-        int c=0;
-        while(n!=1)
-        {
+        if(n==1)
+        return 0;
             if((n&1)==1) {   // check conditon for odd number is wrong
-                n= n - 1;
-                c++;
-            }
-            n= n>>1;        // these two statements in else, otherwise c++ will happen twice if the 'if' condition is true
-            c++;            
+            return (1+ Math.min(min_replacements(n-1),min_replacements(n+1)));
 
-        }
-        return c;
+            }
+            else              // these two statements in else, otherwise c++ will happen twice if the 'if' condition is true
+            {
+           return (1+ min_replacements( n>>1)); 
+            }            
+
+        
+     
     }
     public static void main(String args[])
     {
@@ -27,7 +28,7 @@ public class BEST    // code wont work and not the best approach as well
             System.out.print(c+" ");
         }
         //EXPECTED OUTPUT
-        int []expected_out={3,6,8,10,0,11,9,10};
+        int []expected_out={3,6,8,7,0,9,9,10};
         System.out.println("\nExpected output:");
         for(int i:expected_out)
             System.out.print(i+" ");
