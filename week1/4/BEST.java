@@ -3,18 +3,15 @@ public class BEST    // code wont work and not the best approach as well
     static int  min_replacements(int n)
     {
         if(n==1)
-        return 0;
-            if((n&1)==1) {   // check conditon for odd number is wrong
+            return 0;
+        if((n&1)==1)
+        {  
             return (1+ Math.min(min_replacements(n-1),min_replacements(n+1)));
-
-            }
-            else              // these two statements in else, otherwise c++ will happen twice if the 'if' condition is true
-            {
-           return (1+ min_replacements( n>>1)); 
-            }            
-
-        
-     
+        }
+        else              
+        {
+            return (1+ min_replacements(n>>1)); 
+        }          
     }
     public static void main(String args[])
     {
