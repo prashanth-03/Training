@@ -1,6 +1,16 @@
-1. done.
+# Training
+- Code Complete
+1. Done
 2. 
 3. 
-4. done.  --> Review Done
+4. Done
 5. 
 6.
+
+- Review
+1. In Progress
+2. 
+3. 
+4. Done - Best approach looks good
+5. 
+6. 
