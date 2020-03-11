@@ -4,7 +4,7 @@ public class BEST {
         if(a==b)
             return arr[b];
         else
-            return arr[a]^(result(arr,a+1,b));
+            return arr[a]^(result(arr,a+1,b));      // using recursion doesnt make it best approach. It takes same time as worst approach 
     }
 
     public static void main(String args[])
