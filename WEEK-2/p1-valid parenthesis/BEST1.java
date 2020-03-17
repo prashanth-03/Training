@@ -5,28 +5,29 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class BEST1 {
-    public static boolean isValid(String s) {
-        HashMap<Character, Character> map = new HashMap<Character, Character>();
-        map.put('{', '}');
-        map.put('(', ')');
-        map.put('[', ']');
-        Stack<Character> stack = new Stack<Character>();
-        for (int i = 0; i < s.length(); i++) {
-            char curr = s.charAt(i);
-            if (map.keySet().contains(curr)) {
-                stack.push(curr);
-            } else if (map.values().contains(curr)) {
-                if (!stack.empty() && map.get(stack.peek()) == curr) {
-                    stack.pop();
-                } else {
-                    return false;
-                }
-            }
-        }
-        return stack.empty();
-    }
-
+public class BEST1
+{
+   
+    static long count=0;     
+    static void count_parenthesis(char str[], int pos, int n, int open, int close) 
+    { 
+        if(close == n)  
+        { 
+       		count++;
+        	return; 
+        } 
+        else
+        { 
+            if(open > close) { 
+                str[pos] = '}'; 
+                count_parenthesis(str, pos+1, n, open, close+1); 
+            } 
+            if(open < n) { 
+                str[pos] = '{'; 
+                count_parenthesis(str, pos+1, n, open+1, close); 
+            } 
+        } 
+    } 
     public static void main(String[] args) throws FileNotFoundException
     {
         File input=new File("C:\\Users\\user\\Desktop\\INPUT2_1.txt");
@@ -34,17 +35,21 @@ public class BEST1 {
         File output=new File("C:\\Users\\user\\Desktop\\OUTPUT2_1.txt");
         Scanner sc1=new Scanner((new FileReader(output)));
         System.out.println("Actual Output:");
-        while(sc.hasNext()) {
-            String b = sc.nextLine();
-            boolean a = isValid(b);
-            if (a) {
-                System.out.println("valid");
-            }
-            else
-            {
-                System.out.println("Not valid");
-            }
-        }
+        while(sc.hasNext()) 
+    	{
+        	int n = sc.nextInt();
+	    	if(n<=0)
+		    {
+			    System.out.println("0");
+		    }
+		    else
+		    {	
+   			    char[] str = new char[2 * n]; 
+			    count=0;
+			    count_parenthesis(str, 0, n, 0, 0); 
+             	System.out.println(count);
+           	}
+	    }
         System.out.println("\nExpected Output:");
         while(sc1.hasNext())
         {
