@@ -14,7 +14,7 @@
 - Review
 1. Review Done - edge cases not covered
 2. 
-3. 
+3. Review Done - use binary search and handle cases where k not present in array
 4. 
 5. 
 6. 
