@@ -1,4 +1,4 @@
-valid
-Not valid
-valid
-Not valid
+1
+5
+42
+208012
