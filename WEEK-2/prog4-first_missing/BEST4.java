@@ -17,7 +17,7 @@ public class BEST4 {
             if (a[mid] == mid) {
                 return find(a, mid + 1, high);
             }
-            return find(a, low, mid);
+            return find(a, low+1, mid);
 
         }
         public static void main(String[] args) throws FileNotFoundException
